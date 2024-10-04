@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  border-bottom: 1.5px black solid;
+  transition: all 0.5s ease-in-out;
+}
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.slick-slide>div{
+  margin: 0 0 0 10px;
+}
+
