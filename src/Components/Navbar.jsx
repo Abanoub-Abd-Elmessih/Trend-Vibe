@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../assets/assets";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
 
 export default function Navbar() {
     const [visible, setVisible] = useState(false)
+    const {showSearch , setShowSearch , setSearch} = useContext(ShopContext)
+    const location = useLocation();
+    const isCollectionPage = location.pathname === "/collection";
+    const handleCloseSearch = () => {
+      setShowSearch(!showSearch);
+      setSearch("");
+    };
   return (
     <nav className="flex items-center justify-between py-5 font-medium border-b mb-6 bg-white">
       <Link to={'/'}><p className="tracking-wider text-3xl font-serif">TrendVibe<span className="text-red-500 font-extrabold">.</span></p> </Link>
@@ -30,11 +38,14 @@ export default function Navbar() {
       </ul>
       {/* Search Cart and profile */}
       <div className="flex items-center gap-6">
+        {isCollectionPage && 
         <img
-          src={assets.search_icon}
-          className="w-5 cursor-pointer"
-          alt="search Icon"
+        src={assets.search_icon}
+        className="w-5 cursor-pointer"
+        alt="search Icon"
+        onClick={handleCloseSearch}
         />
+        }
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 min-w-5" alt="Cart Icon" />
           <p className="absolute -right-2 top-2 w-4 flex items-center justify-center leading-4 bg-black text-white aspect-square rounded-full text-xs font-lg">10</p>
