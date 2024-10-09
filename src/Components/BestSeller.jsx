@@ -55,21 +55,21 @@ export default function BestSeller() {
                 breakpoint: 1200,
                 settings: {
                     slidesToShow: 4,
-                    slidesToScroll: 1, // Changed to 1 to align with 4 shown
+                    slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 1, // Changed to 1 to align with 3 shown
+                    slidesToScroll: 1,
                 },
             },
             {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1, // Changed to 1 to align with 2 shown
+                    slidesToScroll: 1,
                 },
             },
             {

@@ -3,7 +3,6 @@ import Home from "./Pages/Home";
 import Collection from "./Pages/Collection";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
-import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
@@ -13,6 +12,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
 import ScrollToTopBtn from "./Components/ScrollToTopBtn";
+import ProductDetails from "./Pages/ProductDetails";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         <Route path="/collection" element={<Collection />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/product/:productId" element={<Product />} />
+        <Route path="/productDetails/:productId" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
