@@ -37,6 +37,12 @@ export default function Navbar() {
         >
           <p>COLLECTION</p>
         </NavLink>
+        <NavLink
+          className="flex flex-col items-center gap-1 pb-1"
+          to="/cart"
+        >
+          <p>CART</p>
+        </NavLink>
         <NavLink className="flex flex-col items-center gap-1 pb-1" to="/about">
           <p>ABOUT</p>
         </NavLink>
@@ -87,6 +93,7 @@ export default function Navbar() {
             <ul className="px-3 flex flex-col">
               <Link className='py-2 pl-6 border-y' onClick={()=>setVisible(false)} to='/'>HOME</Link>
               <Link className='py-2 pl-6 border-b' onClick={()=>setVisible(false)} to='/collection'>COLLECTION</Link>
+              <Link className='py-2 pl-6 border-b' onClick={()=>setVisible(false)} to='/cart'>CART</Link>
               <Link className='py-2 pl-6 border-b' onClick={()=>setVisible(false)} to='/about'>ABOUT</Link>
               <Link className='py-2 pl-6 border-b' onClick={()=>setVisible(false)} to='/contact'>CONTACT</Link>
             </ul>

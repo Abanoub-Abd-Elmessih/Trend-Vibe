@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
       {/* Second Part */}
       <div className="border-t mt-4 text-center pt-5 font-semibold">
-        <p>Copyright 2024@ Abanoub Abd Elmessih - All Right Reserved.</p>
+        <p>Copyright 2024@ <b>Abanoub Abd Elmessih</b> - All Right Reserved.</p>
       </div>
     </div>
   );
