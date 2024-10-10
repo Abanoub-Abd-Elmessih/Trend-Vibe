@@ -23,7 +23,7 @@ export default function ScrollToTopBtn() {
 
   return <>
   {
-    backToTopBtn && <button className="aspect-square rounded-full p-4 fixed bottom-5 right-5 bg-gray-600 text-white text-xl animate-bounce" onClick={scrollToTop}><FaArrowUp /></button>
+    backToTopBtn && <button className="aspect-square rounded-full p-3 fixed bottom-5 right-5 bg-gray-600 text-white text-xl animate-bounce z-50" onClick={scrollToTop}><FaArrowUp /></button>
   }
   </>
 }

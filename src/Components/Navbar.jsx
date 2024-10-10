@@ -1,17 +1,28 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 
 export default function Navbar() {
     const [visible, setVisible] = useState(false)
-    const {showSearch , setShowSearch , setSearch} = useContext(ShopContext)
+    const {showSearch , setShowSearch , setSearch , getCartCount} = useContext(ShopContext)
     const location = useLocation();
     const isCollectionPage = location.pathname === "/collection";
     const handleCloseSearch = () => {
       setShowSearch(!showSearch);
       setSearch("");
     };
+    useEffect(() => {
+      if (visible) {
+        document.body.classList.add("overflow-hidden");
+      } else {
+        document.body.classList.remove("overflow-hidden");
+      }
+      return () => {
+        document.body.classList.remove("overflow-hidden"); // cleanup
+      };
+    }, [visible]);
+    
   return (
     <nav className="flex items-center justify-between py-5 font-medium border-b mb-6 bg-white">
       <Link to={'/'}><p className="tracking-wider text-3xl font-serif">TrendVibe<span className="text-red-500 font-extrabold">.</span></p> </Link>
@@ -48,7 +59,7 @@ export default function Navbar() {
         }
         <Link to="/cart" className="relative">
           <img src={assets.cart_icon} className="w-5 min-w-5" alt="Cart Icon" />
-          <p className="absolute -right-2 top-2 w-4 flex items-center justify-center leading-4 bg-black text-white aspect-square rounded-full text-xs font-lg">10</p>
+          <p className="absolute -right-2 top-2 w-4 flex items-center justify-center leading-4 bg-black text-white aspect-square rounded-full text-xs font-lg">{getCartCount()}</p>
         </Link>
         <div className="group relative">
           <img
@@ -67,7 +78,7 @@ export default function Navbar() {
         <img onClick={()=>setVisible(true)} src={assets.menu_icon} className="w-5 cursor-pointer md:hidden" alt="menu icon" />
       </div>
       {/* menu for small screen */}
-      <div onClick={()=> setVisible(false)} className={`absolute z-50 top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+      <div onClick={()=> setVisible(false)} className={`fixed z-50 top-0 right-0 bottom-0 overflow-hidden min-h-screen bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
         <div className="flex flex-col text-gray-600">
             <div onClick={()=> setVisible(false)} className="flex items-center gap-4 p-5 pt-6 cursor-pointer w-fit">
                 <img src={assets.dropdown_icon} className="h-4 rotate-180" alt="dropdown icon" />
