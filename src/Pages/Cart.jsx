@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import Title from '../Components/Title';
 import { FaRegTrashCan } from 'react-icons/fa6';
+import CartTotal from '../Components/CartTotal';
 
 export default function Cart() {
     const { products, currency, cartItems, updateQuantity, clearCart } = useContext(ShopContext);
@@ -24,7 +25,7 @@ export default function Cart() {
     }, [cartItems]);
 
     const handleClearCart = () => {
-        clearCart(); // Call the function to clear the cart
+        clearCart();
     };
 
     return (
@@ -104,7 +105,11 @@ export default function Cart() {
                     </table>
                 </div>
             )}
-
+            <div className="flex justify-end my-20">
+                <div className="w-full sm:w-96">
+                    <CartTotal />
+                </div>
+            </div>
         </div>
     );
 }
