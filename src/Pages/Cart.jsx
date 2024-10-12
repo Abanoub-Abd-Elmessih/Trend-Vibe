@@ -5,7 +5,7 @@ import { FaRegTrashCan } from 'react-icons/fa6';
 import CartTotal from '../Components/CartTotal';
 
 export default function Cart() {
-    const { products, currency, cartItems, updateQuantity, clearCart } = useContext(ShopContext);
+    const { products, currency, cartItems, updateQuantity, clearCart, navigate } = useContext(ShopContext);
     const [cartData, setCartData] = useState([]);
 
     useEffect(() => {
@@ -108,6 +108,9 @@ export default function Cart() {
             <div className="flex justify-end my-20">
                 <div className="w-full sm:w-96">
                     <CartTotal />
+                    <div className="w-full text-end ">
+                        <button onClick={()=>navigate('/placeOrder')} className='bg-black text-white text-sm my-8 px-8 py-3'>PROCEED TO CHECKOUT</button>
+                    </div>
                 </div>
             </div>
         </div>
