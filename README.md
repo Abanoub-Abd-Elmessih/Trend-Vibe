@@ -1,11 +1,21 @@
-# React + Vite
+# TrendVibe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Stay ahead of the curve** by exploring the latest trends and updates in real-time.
 
-Currently, two official plugins are available:
+## Features
+- 📊 **Real-Time Data**: Get live updates on the latest trends.
+- ⚡ **Fast & Responsive**: Built with Vite, React.
+- 🎨 **Modern UI**: Styled with Tailwind CSS for a sleek design.
+- 🌍 **Deployed on Vercel**: Ensures high availability and fast load times.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend**: React + JavaScript
+- **Styling**: Tailwind CSS
+- **Bundler**: Vite
+- **Deployment**: Vercel
 
-## Live Demo
-You can check out the live demo of the application [here](https://trend-vibe.vercel.app).
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/trend-vibe.git
+   cd trend-vibe
